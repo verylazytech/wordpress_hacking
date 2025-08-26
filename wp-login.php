@@ -1,11 +1,32 @@
 <?php
-/**
- * WordPress User Page
+/*
+ * WP-Login.php Lab Simulation – LFI via wp_lang Parameter by VeryLazyTech
  *
- * Handles authentication, registering, resetting passwords, forgot password,
- * and other user handling.
+ * Description:
+ * This custom lab version of wp-login.php is designed to safely simulate
+ * a Local File Inclusion (LFI) vulnerability via the `wp_lang` parameter,
+ * similar to CVE-2023-2745 in WordPress Core.
  *
- * @package WordPress
+ * Key Features:
+ * - Safe for lab testing: Only reads files placed inside the lab folder.
+ * - Simulated LFI behavior: Users can pass a file name via `wp_lang` in the URL
+ *   (e.g., ?wp_lang=example.txt) to retrieve file contents.
+ * - Controlled environment: Access is limited to a predefined lab directory.
+ * - Practical for learning: Allows testing Python exploits and understanding LFI.
+ * - Educational use only: Intended strictly for penetration testing practice
+ *   in isolated environments.
+ *
+ * Example Usage:
+ * http://localhost/wp-login.php?wp_lang=lab-file.txt
+ *
+ * Purpose:
+ * - Practice Local File Inclusion techniques.
+ * - Test exploit scripts against controlled targets.
+ * - Learn how WordPress parameters can be abused when not properly sanitized.
+ *
+ *
+ * Author: VeryLazyTech
+ * Author URI: https://verylazytech.com
  */
 
 /** Make sure that the WordPress bootstrap has run before continuing. */
