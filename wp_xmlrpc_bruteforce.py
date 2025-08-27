@@ -46,15 +46,14 @@ if missing_packages:
     print(f"pip install {' '.join(missing_packages)}")
     sys.exit(1)
 
-print(Fore.YELLOW +f"""
+print(Fore.YELLOW +r"""
  _                   __  __          _ ____             
 | |    __ _ _____   _\ \/ /_ __ ___ | |  _ \ _ __   ___ 
 | |   / _` |_  / | | |\  /| '_ ` _ \| | |_) | '_ \ / __|
 | |__| (_| |/ /| |_| |/  \| | | | | | |  _ <| |_) | (__ 
 |_____\__,_/___|\__, /_/\_\_| |_| |_|_|_| \_\ .__/ \___|
                 |___/                       |_|         
-                  @VeryLazyTech
-""")
+                  @VeryLazyTech""")
 
 # ===== ARGUMENT PARSER =====
 parser = argparse.ArgumentParser(description="WordPress XML-RPC Brute Force Lab Simulation")
@@ -82,7 +81,7 @@ def escape_xmlrpc(value):
 headers = {"Content-Type": "text/xml"}
 
 # ===== BRUTE-FORCE LOOP =====
-print(Fore.GREEN + f"SStarting brute-force. Now's your time to be laZy...")
+print(Fore.GREEN + f"Starting brute-force. Now's your time to be laZy...")
 for user in users:
     for password in passwords:
         user_esc = escape_xmlrpc(user)
