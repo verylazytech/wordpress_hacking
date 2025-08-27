@@ -62,7 +62,10 @@ def upload_file(xmlrpc_url, user, password, file_path):
     elif filename.lower().endswith(".gif"):
         mime_type = "image/gif"
     else:
-        print("\033[31m[FAIL] Upload failed because file type support only .jpg, .png, .gif\033[0m")
+        print(Fore.RED + "File type not supported change it to .png...")
+        base_name, old_extension = os.path.splitext(filename)
+        filename = base_name + ".png"
+        mime_type = "image/gif"
     
     # Read file and encode in base64
     with open(file_path, "rb") as f:
